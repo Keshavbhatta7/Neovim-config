@@ -104,4 +104,42 @@ require("lspconfig").html.setup {
 }
 
 
+
+require("lspconfig").cssls.setup {
+  on_attach = M.on_attach,
+  capabilities = M.capabilities,
+
+  filetypes = {"css"},
+
+  settings = {
+    clangd = {
+      diagnostic = {
+        enable = true,
+        semanticHighlighting = true
+      },
+      workspace = {
+      }
+    },
+  },
+}
+
+
+require("lspconfig").pylsp.setup {
+  on_attach = M.on_attach,
+  capabilities = M.capabilities,
+
+  filetypes = {"py", "python"},
+
+  settings = {
+    clangd = {
+      diagnostic = {
+        enable = true,
+        semanticHighlighting = true
+      },
+      workspace = {
+      }
+    },
+  },
+}
+
 return M
